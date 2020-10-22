@@ -1,19 +1,26 @@
+import React from 'react';
 
-function infoTab() {
-    return (
-        <div id="menu0" class="tab-pane fade">
+class InfoTab extends React.Component {
+  render() {
+    const info = this.props.info;
+
+    return(
+      <div id="menu0" class="tab-pane fade">
         <ul class="list-group">
           <h4>Address</h4>
-            <li class="list-group-item"></li>
+    <li class="list-group-item">{info.address}</li>
           <h4>Phone Number</h4>
-            <li class="list-group-item"></li>
+    <li class="list-group-item">{info.phoneNumber}</li>
           <h4>Website</h4>
-            <a class="list-group-item"></a>
+    <a class="list-group-item">{info.url}</a>
           <h4>Opening Hours</h4>
-            <ul class="list-group"></ul>
+    <ul class="list-group">{info.openingHours}</ul>
         </ul>
-        </div>
-      )
-    }
+      </div>
+    )
+  }
+}
 
-    export default infoTab;
+export default InfoTab;
+
+    

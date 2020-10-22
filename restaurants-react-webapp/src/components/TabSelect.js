@@ -1,9 +1,8 @@
 import React from 'react';
-//import './Results.css';
 
-function Results() {
+function TabSelect() {
     return (
-      <div id="resultsdiv" class="container">
+      <div class="container">
         <h2></h2>
           <ul class="nav nav-pills nav-fill">
             <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#menu0">Information</a></li>
@@ -17,4 +16,4 @@ function Results() {
       )
     }
 
-    export default Results;
+    export default TabSelect;

@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
-import Results from './components/Results';
+import TabSelect from './components/TabSelect.js';
+import RequestData from './components/RequestData'
 import * as serviceWorker from './serviceWorker';
 
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <TabSelect />
+    <RequestData />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -9,10 +9,6 @@ function App() {
           <a class="navbar-brand">RESTaurants</a>
         </div>
       </nav>
-      <footer class="footer">
-        <div class="container">
-        </div>
-    </footer>
     </div>
     )
   }

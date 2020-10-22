@@ -5,10 +5,3 @@ function goButton() {
     }
 
     export default goButton;
-
-    ReactDOM.render(
-        <React.StrictMode>
-          <goButton />
-        </React.StrictMode>,
-        document.getElementById('root')
-      );
