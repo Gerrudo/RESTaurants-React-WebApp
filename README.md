@@ -8,7 +8,8 @@ Frontend Web Application built on the React Framework
     - [x] Create Information Tab
     - [x] Create Reviews Tab
     - [x] Create Photos Tab
-    - [x] Create Maps Tab
+    - [x] Create Maps Tab+- [x] Have data fields display on button click
+- [ ] Replace fetch() (GET) method to a POST using Axios, XHR or Request
 - [ ] Create frontend get request to our Express API
 - [ ] Have data from our API update the page using react
 - [ ] Test for bugs (page spam, invalid browser, no coordinates, getCoordinates fail)
