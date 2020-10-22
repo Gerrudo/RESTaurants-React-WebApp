@@ -3,16 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
-import TabSelect from './components/TabSelect.js';
-import RequestData from './components/RequestData'
+import GoButton from './components/GoButton.js'
 import * as serviceWorker from './serviceWorker';
 
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <TabSelect />
-    <RequestData />
+    <GoButton />
   </React.StrictMode>,
   document.getElementById('root')
 );

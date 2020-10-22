@@ -1,4 +1,4 @@
-function mapsTab() {
+function MapsTab() {
     return (
         <div id="menu3" class="tab-pane fade">
             <div id="mapsembed" class="text-center">
@@ -7,4 +7,4 @@ function mapsTab() {
       )
     }
 
-    export default mapsTab;
+    export default MapsTab;

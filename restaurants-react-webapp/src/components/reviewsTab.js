@@ -1,9 +1,9 @@
 
-function reviewsTab() {
+function ReviewsTab() {
     return (
         <div id="menu1" class="tab-pane fade">
         </div>
       )
     }
 
-    export default reviewsTab;
+    export default ReviewsTab;
