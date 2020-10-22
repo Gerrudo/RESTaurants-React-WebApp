@@ -1,17 +1,34 @@
 import React, { Component } from 'react';
 import InfoTab from './InfoTab.js';
 
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    console.error('Geolocation not supported by browser');
+  }
+}
+
+function showPosition(position) {
+  return position.coords.latitude + ', ' + position.coords.longitude
+}
+
 class RequestData extends Component {
     //We will store api data here
   state = {
-    info : {
-      name: 'TastyPlace',
-      address: '1 Manchester Road, Manchester, M1 5BT',
-      phoneNumber: '0744869586',
-      url: 'https://www.tastyplace.com',
-      openingHours: 'Monday: Closed'
-    },
-    displayInfo: false
+    info : {},
+  }
+
+  componentDidMount() {
+    let userCoordinates = getLocation()
+
+    fetch(`https://localhost:3000/go#${userCoordinates}`)
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({ info: data })
+    })
+    .catch(console.log)
   }
 
   render() {

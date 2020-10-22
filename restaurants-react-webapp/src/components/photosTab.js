@@ -1,7 +1,8 @@
 
 function PhotosTab() {
     return (
-        <div id="menu2" class="tab-pane fade">
+        <div>
+          <h3>Photos</h3>
         </div>
       )
     }

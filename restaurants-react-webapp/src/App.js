@@ -6,7 +6,7 @@ function App() {
     <div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
-          <a class="navbar-brand">RESTaurants</a>
+          <a href="http://localhost:3000" class="navbar-brand">RESTaurants</a>
         </div>
       </nav>
     </div>

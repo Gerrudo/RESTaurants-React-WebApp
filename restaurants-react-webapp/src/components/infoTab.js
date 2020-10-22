@@ -7,16 +7,17 @@ class InfoTab extends React.Component {
     return(
       <div>
         <h2>{info.name}</h2>
-        <ul class="list-group">
-          <h4>Address</h4>
-            <li class="list-group-item">{info.address}</li>
-                  <h4>Phone Number</h4>
-            <li class="list-group-item">{info.phoneNumber}</li>
-                  <h4>Website</h4>
-            <a class="list-group-item">{info.url}</a>
-                  <h4>Opening Hours</h4>
-            <ul class="list-group">{info.openingHours}</ul>
-        </ul>
+          <h3>Information</h3>
+          <ul class="list-group">
+            <h4>Address</h4>
+              <li class="list-group-item">{info.address}</li>
+                    <h4>Phone Number</h4>
+              <li class="list-group-item">{info.phoneNumber}</li>
+                    <h4>Website</h4>
+              <a href={info.url} class="list-group-item">{info.url}</a>
+                    <h4>Opening Hours</h4>
+              <ul class="list-group">{info.openingHours}</ul>
+          </ul>
       </div>
     )
   }

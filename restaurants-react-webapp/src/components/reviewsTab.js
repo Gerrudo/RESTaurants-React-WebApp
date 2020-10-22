@@ -1,7 +1,8 @@
 
 function ReviewsTab() {
     return (
-        <div id="menu1" class="tab-pane fade">
+        <div>
+          <h3>Reviews</h3>
         </div>
       )
     }
