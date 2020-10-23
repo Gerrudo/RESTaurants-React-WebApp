@@ -5,7 +5,7 @@ class GoButton extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        showComponent: false,
+        toggle: false,
       };
       // This binding is necessary to make `this` work in the callback
       this._onButtonClick = this._onButtonClick.bind(this);
@@ -13,19 +13,28 @@ class GoButton extends React.Component {
   
     _onButtonClick() {
       this.setState({
-        showComponent: true,
+        toggle: true,
+        runAgain: true
       });
+    }
+
+    componentDidMount(){
+        this.setState({
+            toggle: false,
+            runAgain: false
+        });
     }
   
     render() {
       return (
         <div class="container">
           <button button type="button" class="btn btn-primary" onClick={this._onButtonClick}>Button</button>
-          {this.state.showComponent ?
+          {this.state.toggle ?
              <RequestData /> :
              null
           }
         </div>
+        
       );
     }
   }
