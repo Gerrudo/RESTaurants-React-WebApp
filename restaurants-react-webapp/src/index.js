@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
-import GoButton from './components/GoButton.js'
+import GoButton from './components/goButton.js'
 import * as serviceWorker from './serviceWorker';
 import { usePromiseTracker } from "react-promise-tracker";
 
@@ -11,7 +11,11 @@ const LoadingIndicator = props => {
   const { promiseInProgress } = usePromiseTracker();
   return (
     promiseInProgress &&
-    <h1>Hey some async call in progress ! </h1>
+    <div class="container">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
   );  
 }
 
@@ -19,7 +23,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
     <GoButton />
-    <LoadingIndicator/>
+    <LoadingIndicator />
   </React.StrictMode>,
   document.getElementById('root')
 );

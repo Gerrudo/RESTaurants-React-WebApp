@@ -17,7 +17,9 @@ class GoButton extends React.Component {
         this.setState({
             dataReady: false
     })
+      trackPromise(
         this.apiCall()
+      )
     }
 
     locationService(){
@@ -33,7 +35,6 @@ class GoButton extends React.Component {
           }
         })
     }
-    
     async apiCall(){
         let userCoordinates = await this.locationService();
         var myHeaders = new Headers();
