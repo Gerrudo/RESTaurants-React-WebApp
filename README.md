@@ -8,10 +8,11 @@ Frontend Web Application built on the React Framework
     - [x] Create Information Tab
     - [x] Create Reviews Tab
     - [x] Create Photos Tab
-    - [x] Create Maps Tab+- [x] Have data fields display on button click
+    - [x] Create Maps Tab
+- [x] Have data fields display on button click
 - [x] Replace fetch() (GET) method to a POST using Axios, XHR or Request
 - [x] Create frontend get request to our Express API
-- [ ] Have loading spinner while getting request
+- [x] Have loading spinner while getting request
 - [ ] Populate page with data for our 4 components, info, reviews, photos and maps
 - [ ] Have data from our API update the page using react
 - [ ] Test for bugs (page spam, invalid browser, no coordinates, getCoordinates fail)
@@ -23,9 +24,9 @@ Frontend Web Application built on the React Framework
 
 ## Bugs
 
-- [ ] Error when info.result.opening_hours.weekday_text; or any other object param is undefined
+- [x] Error when info.result.opening_hours.weekday_text; or any other object param is undefined
     Bug: Upon rendering a new compoment, if any object parameter is undefined, this will cause the page to crash
     Fix: Write exceptions for if any data is undefined to either not show the field, or upddate with 'No Information'
-- [ ] Loading Spinner stuck rendering on page render
+- [x] Loading Spinner stuck rendering on page render
     Bug: The loading spinner only renders once when the page is loaded and not at all when the button for the request is clicked again.
     Fix: Revise x ? y : xy in render(), we should be able to set dataReady: false to stop the comp from rendering, and setState on button click for dataReady: true, but this causes a crash, we may need to setState with info again also.
