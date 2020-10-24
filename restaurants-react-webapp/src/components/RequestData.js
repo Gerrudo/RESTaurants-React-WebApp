@@ -17,8 +17,6 @@ function locationService(){
   })
 }
 
-
-
 class RequestData extends Component {
 
   state = {
@@ -51,24 +49,12 @@ class RequestData extends Component {
     .catch(error => console.error(error));
     }
 
- componentDidMount() {
-    this.apiCall()
-    this.setState({runAgain: false});
-  }
-
-  //Need to look to do with a number and check if the value is different
-  componentDidUpdate(){
-    if (this.state.runAgain === true){
-      this.apiCall()
-    }
-  }
-
   render() {
     return(
       <div className="container">
         {
           this.state.dataReady ?
-          <InfoTab info={this.state.info} /> 
+          <InfoTab info={this.apiCall().info} /> 
           :
           <div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>
         }
