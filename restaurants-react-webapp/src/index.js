@@ -5,12 +5,21 @@ import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
 import GoButton from './components/GoButton.js'
 import * as serviceWorker from './serviceWorker';
+import { usePromiseTracker } from "react-promise-tracker";
 
+const LoadingIndicator = props => {
+  const { promiseInProgress } = usePromiseTracker();
+  return (
+    promiseInProgress &&
+    <h1>Hey some async call in progress ! </h1>
+  );  
+}
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
     <GoButton />
+    <LoadingIndicator/>
   </React.StrictMode>,
   document.getElementById('root')
 );

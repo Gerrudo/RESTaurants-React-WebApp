@@ -1,18 +1,22 @@
 import React from 'react';
 import InfoTab from './InfoTab.js';
+import { trackPromise } from 'react-promise-tracker';
+
 
 class GoButton extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         info: {},
-        dataReady: false
       };
       // This binding is necessary to make `this` work in the callback
       this._onButtonClick = this._onButtonClick.bind(this);
     }
   
     _onButtonClick() {
+        this.setState({
+            dataReady: false
+    })
         this.apiCall()
     }
 
@@ -29,7 +33,7 @@ class GoButton extends React.Component {
           }
         })
     }
-
+    
     async apiCall(){
         let userCoordinates = await this.locationService();
         var myHeaders = new Headers();
@@ -60,13 +64,14 @@ class GoButton extends React.Component {
       return (
         <div class="container">
           <button button type="button" class="btn btn-primary" onClick={this._onButtonClick}>Button</button>
-          
-            {
-            this.state.dataReady ?
-            <InfoTab info={this.state.info} /> 
-            :
-            <div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>
-            }
+            <div>
+                {
+                this.state.dataReady ?
+                <InfoTab info={this.state.info} /> 
+                :
+                null
+                }
+            </div>
         </div>
       );
     }
