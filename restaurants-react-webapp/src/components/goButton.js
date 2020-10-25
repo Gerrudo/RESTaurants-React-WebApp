@@ -2,6 +2,7 @@ import React from 'react';
 import InfoTab from './InfoTab.js';
 import { trackPromise } from 'react-promise-tracker';
 import ReviewsTab from './ReviewsTab.js';
+import NoData from './NoData'
 
 
 class GoButton extends React.Component {
@@ -71,7 +72,14 @@ class GoButton extends React.Component {
                 this.state.dataReady ?
                 <div>
                 <InfoTab info={this.state.info} />
-                <ReviewsTab reviews={this.state.info} />
+                {this.state.info.result.reviews === undefined ? (
+                <div>
+                  <h3>Information</h3>
+                  <NoData />
+                </div>
+                ) : (
+                  <ReviewsTab reviews={this.state.info.result.reviews} />
+                )}
                 </div>
                 :
                 null
