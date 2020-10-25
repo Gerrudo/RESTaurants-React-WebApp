@@ -1,0 +1,40 @@
+
+
+/* Navigation styling
+========================================================================== */
+
+#nav-wrapper {    
+  vertical-align: middle;
+  width: 1920px;
+  height: 90px;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  display: inline;
+  overflow: hidden;  
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {   
+  padding-top: 40px;
+  vertical-align: middle;
+  height: 29px;
+  font-family: Montserrat;
+  font-size: 24px;
+  line-height: 1.21;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.logo {
+  display: block;
+  float: left;
+}
