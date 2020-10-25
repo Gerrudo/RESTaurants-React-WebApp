@@ -3,21 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
-import GoButton from './components/goButton.js'
+import GoButton from './components/goButton'
+import LoadingIndicator from './components/Loading'
 import * as serviceWorker from './serviceWorker';
-import { usePromiseTracker } from "react-promise-tracker";
 
-const LoadingIndicator = props => {
-  const { promiseInProgress } = usePromiseTracker();
-  return (
-    promiseInProgress &&
-    <div class="container">
-      <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
-      </div>
-    </div>
-  );  
-}
 
 ReactDOM.render(
   <React.StrictMode>

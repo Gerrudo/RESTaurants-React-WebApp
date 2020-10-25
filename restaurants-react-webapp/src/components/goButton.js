@@ -1,7 +1,9 @@
 import React from 'react';
-import InfoTab from './InfoTab.js';
+import InfoTab from './InfoTab';
 import { trackPromise } from 'react-promise-tracker';
-import ReviewsTab from './ReviewsTab.js';
+import ReviewsTab from './ReviewsTab';
+import PhotosTab from './PhotosTab';
+import MapsTab from './MapsTab'
 import NoData from './NoData'
 
 
@@ -11,7 +13,6 @@ class GoButton extends React.Component {
       this.state = {
         info: {},
       };
-      // This binding is necessary to make `this` work in the callback
       this._onButtonClick = this._onButtonClick.bind(this);
     }
   
@@ -37,6 +38,7 @@ class GoButton extends React.Component {
           }
         })
     }
+    //We will need to move our apiCall() and LocationService() to clean up this component, to save clutter.
     async apiCall(){
         let userCoordinates = await this.locationService();
         var myHeaders = new Headers();
@@ -62,28 +64,53 @@ class GoButton extends React.Component {
         )
         .catch(error => console.error(error));
     }
-    
+    //We will need to look at the if typeof check in this render, may be worth extracting this out as it could become messy as we're dealing with more data.
     render() {
       return (
         <div class="container">
           <button button type="button" class="btn btn-primary" onClick={this._onButtonClick}>Button</button>
             <div>
+
                 {
                 this.state.dataReady ?
+
                 <div>
-                <InfoTab info={this.state.info} />
-                {this.state.info.result.reviews === undefined ? (
-                <div>
-                  <h3>Information</h3>
-                  <NoData />
+
+                  <InfoTab info={this.state.info} />
+                  
+                  {this.state.info.result.reviews === undefined ? (
+                    <div>
+                      <h3>Reviews</h3>
+                      <NoData />
+                    </div>
+                  ) : (
+                    <ReviewsTab reviews={this.state.info.result.reviews} />
+                  )}
+
+                  {this.state.info.result.photoUrls === undefined ? (
+                    <div>
+                      <h3>Photos</h3>
+                      <NoData />
+                    </div>
+                  ) : (
+                    <PhotosTab photos={this.state.info.result.photoUrls} />
+                  )}
+
+                  {this.state.info.result.mapsEmbedUrls === undefined ? (
+                    <div>
+                      <h3>Maps</h3>
+                      <NoData />
+                    </div>
+                  ) : (
+                    <MapsTab mapsEmbedUrls={this.state.info.result.mapsEmbedUrls} />
+                  )}
+
                 </div>
-                ) : (
-                  <ReviewsTab reviews={this.state.info.result.reviews} />
-                )}
-                </div>
+
                 :
                 null
                 }
+
             </div>
         </div>
       );

@@ -13,8 +13,9 @@ Frontend Web Application built on the React Framework
 - [x] Replace fetch() (GET) method to a POST using Axios, XHR or Request
 - [x] Create frontend get request to our Express API
 - [x] Have loading spinner while getting request
-- [ ] Populate page with data for our 4 components, info, reviews, photos and maps
-- [ ] Have data from our API update the page using react
+- [x] Populate page with data for our 4 components, info, reviews, photos and maps
+- [x] Have data from our API update the page using react
+- [ ] Impliment shifting cards feature for recent request, this requires db implimentation in the backend
 - [ ] Test for bugs (page spam, invalid browser, no coordinates, getCoordinates fail)
 - [ ] Write catches/exceptions for any bugs found
 - [ ] Import New UI 

@@ -12,7 +12,8 @@ class ReviewsTab extends React.Component {
             <img src={item.profile_photo_url} class="mr-3" alt={item.profile_photo_url}></img>
               <div class="media-body">
                 <h5 class="mt-0">{item.author_name}</h5>
-                {item.text}
+                <p>Rating: {item.rating}/5</p>
+                <p>{item.text}</p>
               </div>
             </div>
           ))}
@@ -20,4 +21,5 @@ class ReviewsTab extends React.Component {
     )
   }
 }
+
 export default ReviewsTab;
