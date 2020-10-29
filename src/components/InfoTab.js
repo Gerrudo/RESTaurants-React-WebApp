@@ -4,6 +4,7 @@ import NoData from './NoData'
 class InfoTab extends React.Component {
   render() {
     const info = this.props.info;
+    if (!info || info.length === 0) return <NoData />;
     return(
       <div>
         <h2>{info.result.name}</h2>

@@ -4,6 +4,7 @@ class MapsTab extends React.Component {
 
   render(){
     const maps = this.props.mapsEmbedUrls
+    if (!maps || maps.length === 0) return <p>No Maps data, sorry</p>;
     return (
         <div class="container">
             <h3>Maps</h3>

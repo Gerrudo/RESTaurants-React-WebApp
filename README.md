@@ -31,3 +31,6 @@ Frontend Web Application built on the React Framework
 - [x] Loading Spinner stuck rendering on page render
     Bug: The loading spinner only renders once when the page is loaded and not at all when the button for the request is clicked again.
     Fix: Revise x ? y : xy in render(), we should be able to set dataReady: false to stop the comp from rendering, and setState on button click for dataReady: true, but this causes a crash, we may need to setState with info again also.
+- [ ] Error when fetching images or google review images 
+    Bug: Sometimes we get 403 from google images when making a request this is due to rate limiting
+    Fix: Need to see how we can stop this in the console, also optimise our calls so we keep all the information we gather in state and select a location client side, this way we're only making 1 request per click
