@@ -1,23 +1,18 @@
 import React from 'react';
 import { trackPromise } from 'react-promise-tracker';
-import InfoTab from './InfoTab';
-import ReviewsTab from './ReviewsTab';
-import PhotosTab from './PhotosTab';
-import MapsTab from './MapsTab'
-
+import Info from './Info';
+import Reviews from './Reviews';
+import Photos from './Photos';
+import Maps from './Maps'
 
 class GoButton extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {
-        locationResults: {},
-      };
+      this.state = {};
       this._onButtonClick = this._onButtonClick.bind(this);
     }
   
     _onButtonClick() {
-        this.setState({
-    })
       trackPromise(
         this.apiCall()
       )
@@ -70,10 +65,10 @@ class GoButton extends React.Component {
                 {
                 this.state.dataReady ?
                 <div>
-                  <InfoTab info={this.state.info} />
-                  <ReviewsTab reviews={this.state.info.result.reviews} />
-                  <PhotosTab photos={this.state.info.result.photoUrls} />
-                  <MapsTab mapsEmbedUrls={this.state.info.result.mapsEmbedUrls} />
+                  <Info info={this.state.info} />
+                  <Reviews reviews={this.state.info.result.reviews} />
+                  <Photos photos={this.state.info.result.photoUrls} />
+                  <Maps mapsEmbedUrls={this.state.info.result.mapsEmbedUrls} />
                 </div>
                 :
                 null
