@@ -4,6 +4,7 @@ class ReviewsTab extends React.Component {
 
   render(){
     const reviews = this.props.reviews
+    if (!reviews || reviews.length === 0) return <p>No Reviews, sorry</p>;
     return (
       <div>
         <h3>Reviews</h3>
