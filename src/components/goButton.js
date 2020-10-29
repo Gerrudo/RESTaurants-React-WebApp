@@ -63,10 +63,6 @@ class GoButton extends React.Component {
         .catch(error => console.error(error));
     }
 
-    selectRandomPlace(){
-
-    }
-
     render() {
       return (
         <div class="container">
