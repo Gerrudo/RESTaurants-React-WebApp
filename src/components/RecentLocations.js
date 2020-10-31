@@ -8,30 +8,27 @@ class RecentLocations extends React.Component {
     }
 
     async apiCall(){
-        var urlencoded = new URLSearchParams();
 
         var requestOptions = {
         method: 'GET',
-        body: urlencoded,
         redirect: 'follow'
         };
 
-        fetch("https://localhost:1443/recentlocations", requestOptions)
+        fetch("https://dev.tomsnetwork.uk:1443/recentlocations", requestOptions)
         .then(response => response.json())
         .then(result => 
             this.setState({ 
                 recentLocationsData: result,
-                dataReady: false,
+                dataReady: true,
             }),
           )
         .catch(error => console.log('error', error));
         }
 
-    async componentDidMount(){
+    componentDidMount(){
         trackPromise(
             this.apiCall() 
         )
-        console.log(this.state)       
     }
             
   render(){
@@ -42,20 +39,24 @@ class RecentLocations extends React.Component {
         <h3>Recent Places</h3>
         {
         this.state.dataReady ?
-        <div>
+        <div class="row">
             {recentLocationsData.map(item => (
                 <div class="card" style={{width: "18rem"}}>
-                    <img class="card-img-top" src="{item..googleImageUrl.URL[0]}" alt="Card"></img>
+                    <img class="card-img-top" src={item.googleImageUrl[0].URL} alt="Card"></img>
                         <div class="card-body">
                             <h5 class="card-title">{item.name}</h5>
                             <p class="card-text">{item.address}</p>
-                            <a href="{item.googleMapsUrl}" class="btn btn-primary">Open in Google Maps</a>
+                            <a href={item.googleMapsUrl} class="btn btn-primary">Open in Google Maps</a>
                         </div>
                 </div>    
             ))}    
         </div>
         :
-        null   
+        <div class="container">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
         }
      </div>
     )

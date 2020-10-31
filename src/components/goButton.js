@@ -47,7 +47,7 @@ class GoButton extends React.Component {
           redirect: 'follow'
         };
       
-        fetch("https://dev.tomsnetwork.uk:1443/go", requestOptions)
+        fetch("https://dev.tomsnetwork.uk:1443/newlocationsearch", requestOptions)
         .then(response => response.json())
         .then(result => 
           this.setState({ 
