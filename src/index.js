@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
-import GoButton from './components/goButton'
+import GoButton from './components/GoButton'
 import LoadingIndicator from './components/Loading'
+import RecentLocations from './components/RecentLocations.js'
 import * as serviceWorker from './serviceWorker';
 
 
@@ -13,6 +14,7 @@ ReactDOM.render(
     <App />
     <GoButton />
     <LoadingIndicator />
+    <RecentLocations />
   </React.StrictMode>,
   document.getElementById('root')
 );
