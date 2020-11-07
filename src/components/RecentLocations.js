@@ -42,11 +42,11 @@ class RecentLocations extends React.Component {
         <div class="row">
             {recentLocationsData.map(item => (
                 <div class="card" style={{width: "18rem"}}>
-                    <img class="card-img-top" src={item.googleImageUrl[0].URL} alt="Card"></img>
+                    <img class="card-img-top" src={`https://dev.tomsnetwork.uk:1443/images#photo_reference=${item.result.photos[0].photo_reference}`} alt="Card"></img>
                         <div class="card-body">
                             <h5 class="card-title">{item.name}</h5>
                             <p class="card-text">{item.address}</p>
-                            <a href={item.googleMapsUrl} class="btn btn-primary">Open in Google Maps</a>
+                            <a href={item.result.url} class="btn btn-primary">Open in Google Maps</a>
                         </div>
                 </div>    
             ))}    

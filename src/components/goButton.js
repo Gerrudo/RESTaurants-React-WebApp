@@ -67,7 +67,7 @@ class GoButton extends React.Component {
                 <div>
                   <Info info={this.state.info} />
                   <Reviews reviews={this.state.info.result.reviews} />
-                  <Photos photos={this.state.info.result.photoUrls} />
+                  <Photos photos={this.state.info.result.photos} />
                   <Maps mapsEmbedUrls={this.state.info.result.mapsEmbedUrls} />
                 </div>
                 :

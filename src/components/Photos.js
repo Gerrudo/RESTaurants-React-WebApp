@@ -10,7 +10,7 @@ class PhotosTab extends React.Component {
         <h3>Photos</h3>
         {photos.map(item => (
             <div>
-              <img class="img-thumbnail" src={item.URL} alt={item.URL}>
+              <img class="img-thumbnail" src={`https://dev.tomsnetwork.uk:1443/images#photo_reference=${item.photo_reference}`} alt={item.photo_reference}>
               </img>
             </div>
           ))}
