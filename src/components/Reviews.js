@@ -3,7 +3,7 @@ import React from 'react';
 class ReviewsTab extends React.Component {
 
   render(){
-    const reviews = this.props.reviews
+    const reviews = this.props.info.result.reviews
     if (!reviews || reviews.length === 0) return <p>No Reviews, sorry</p>;
     return (
       <div>
