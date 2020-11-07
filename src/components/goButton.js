@@ -66,9 +66,9 @@ class GoButton extends React.Component {
                 this.state.dataReady ?
                 <div>
                   <Info info={this.state.info} />
-                  <Reviews reviews={this.state.info.result.reviews} />
-                  <Photos photos={this.state.info.result.photos} />
-                  <Maps mapsEmbedUrls={this.state.info.result.mapsEmbedUrls} />
+                  <Reviews info={this.state.info} />
+                  <Photos info={this.state.info} />
+                  <Maps info={this.state.info} />
                 </div>
                 :
                 null
